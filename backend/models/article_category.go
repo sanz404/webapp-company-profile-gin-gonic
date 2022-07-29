@@ -1,7 +1,7 @@
 package models
 
 type ArticleCategory struct {
-	Id        uint64 `json:"id" gorm:"primary_key"`
-	UserId    uint64 `json:"user_id" gorm:"index;not null"`
-	ArticleId uint64 `json:"Article_id" gorm:"index;not null"`
+	Id         uint64 `json:"id" gorm:"primary_key"`
+	ArticleId  uint64 `json:"article_id" gorm:"index;not null"`
+	CategoryId uint64 `json:"category_id" gorm:"index;not null"`
 }
