@@ -1,0 +1,6 @@
+# Install Package Depency
+go mod download github.com/gin-gonic/gin
+go build
+
+# Run Application
+go run main.go
