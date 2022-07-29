@@ -4,3 +4,6 @@ go build
 
 # Run Application
 go run main.go
+
+# Seed Application
+go run main.go --gseed
