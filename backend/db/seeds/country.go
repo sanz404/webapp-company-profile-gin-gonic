@@ -20,7 +20,6 @@ func RootDir() string {
 
 func countrySeeder(s goseeder.Seeder) {
 
-	s.DB.Exec(`TRUNCATE TABLE countries`)
 	jsonFile, err := os.Open(RootDir() + "/data/json/countries.json")
 	if err != nil {
 		fmt.Println(err)
@@ -32,6 +31,7 @@ func countrySeeder(s goseeder.Seeder) {
 	var result map[string]interface{}
 	json.Unmarshal([]byte(byteValue), &result)
 
+	s.DB.Exec(`TRUNCATE TABLE countries`)
 	for _, item := range result["ref_country_codes"].([]interface{}) {
 		code := item.(map[string]interface{})["alpha2"].(string)
 		name := item.(map[string]interface{})["country"].(string)
